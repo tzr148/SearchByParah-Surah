@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         commits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri webpage = Uri.parse("");
+                Uri webpage = Uri.parse("https://github.com/tzr148/SearchByParah-Surah");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 startActivity(intent);
             }
