@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -130,6 +132,15 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView.setLayoutManager(layoutManager);
                 adapter = new myRecyclerViewAdapter(verses) ;
                 recyclerView.setAdapter(adapter);
+            }
+        });
+
+        commits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                startActivity(intent);
             }
         });
     }
