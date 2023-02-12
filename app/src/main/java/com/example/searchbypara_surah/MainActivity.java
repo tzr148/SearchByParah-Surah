@@ -47,12 +47,7 @@ public class MainActivity extends AppCompatActivity {
         type=findViewById(R.id.spinnerType);
         lang=findViewById(R.id.spinnerLang);
         number=findViewById(R.id.number);
-        ArrayList<String> types= new ArrayList<>();
-        types.add("By Parah");
-        types.add("By Surah");
-        spinnerAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
-        spinnerAdapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        type.setAdapter(spinnerAdapterType);
+
         ArrayList<String> langs= new ArrayList<>();
         langs.add("Urdu");
         langs.add("English");
@@ -62,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
         spinnerAdapterLang = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, langs);
         spinnerAdapterLang.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lang.setAdapter(spinnerAdapterLang);
+        ArrayList<String> types= new ArrayList<>();
+        types.add("By Parah");
+        types.add("By Surah");
+        spinnerAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
+        spinnerAdapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        type.setAdapter(spinnerAdapterType);
         number=findViewById(R.id.number);
 
         search.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         String surah_number=object.getString("surah_number").toString();
                         String text=object.getString("text").toString();
                         String translation="";
-                        if(type_txt.equals("Surah") && surah_number.equals(number_txt) )
+                        if(type_txt.equals("By Surah") && surah_number.equals(number_txt) )
                         {
                             text=object.getString("text");
                             if(lang_txt.equals("Urdu"))
